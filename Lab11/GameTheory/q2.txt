@@ -1,0 +1,84 @@
+Choose number of choices for player A (m): 2
+Choose number of choices for player B (n): 4
+Enter the payoff matrix (2 rows, 4 cols)
+-2 3 5 2
+5 -1 -2 0
+
+The problem is unstable(that is saddle point does not exist)... Solving to find optimal proportions for PlayerA,B
+
+The Payoff tableau: 
+                         y1           y2           y3           y4      row_min
+            x0           -2            3            5            2           -2
+            x1            5           -1           -2            0           -2
+       col_max            5            3            5            2             
+
+
+The coeeficient matrix: 
+            y1            y2            y3            y4            y5            y6          RHS
+            2             7             9             6             1             0             1 
+            9             3             2             4             0             1             1 
+
+
+The Simplex tableau: 
+           C0        Basis           x1           x2           x3           x4           x5           x6          RHS
+            0            5            2            7            9            6            1            0            1
+            0            6            9            3            2            4            0            1            1
+
+
+Beginning Simplex method!!
+
+
+Iteration: 0
+The Tableau: 
+           C0        Basis           x1           x2           x3           x4           x5           x6          RHS
+            0            5            2            7            9            6            1            0            1
+            0            6            9            3            2            4            0            1            1
+Deviations: 1  1  1  1  0  0  
+leaving_var_row_index: 1, entering_var_col_index: 2
+
+
+Iteration: 1
+The Tableau: 
+           C0        Basis           x1           x2           x3           x4           x5           x6          RHS
+            0            5            0      6.33333      8.55556      5.11111            1    -0.222222     0.777778
+            1            1            1     0.333333     0.222222     0.444444            0     0.111111     0.111111
+Deviations: 0  0.666667  0.777778  0.555556  0  -0.111111  
+leaving_var_row_index: 0, entering_var_col_index: 4
+
+
+Iteration: 2
+The Tableau: 
+           C0        Basis           x1           x2           x3           x4           x5           x6          RHS
+            1            3            0      0.74026            1     0.597403     0.116883    -0.025974    0.0909091
+            1            1            1     0.168831            0     0.311688    -0.025974     0.116883    0.0909091
+Deviations: 0  0.0909091  0  0.0909091  -0.0909091  -0.0909091  
+leaving_var_row_index: 0, entering_var_col_index: 3
+
+
+Iteration: 3
+The Tableau: 
+           C0        Basis           x1           x2           x3           x4           x5           x6          RHS
+            1            2            0            1      1.35088     0.807018     0.157895   -0.0350877     0.122807
+            1            1            1            0     -0.22807     0.175439   -0.0526316     0.122807    0.0701754
+Deviations: 0  0  -0.122807  0.0175439  -0.105263  -0.0877193  
+leaving_var_row_index: 0, entering_var_col_index: 5
+
+
+Iteration: 4
+The Tableau: 
+           C0        Basis           x1           x2           x3           x4           x5           x6          RHS
+            1            4            0      1.23913      1.67391            1     0.195652   -0.0434783     0.152174
+            1            1            1    -0.217391    -0.521739            0   -0.0869565     0.130435    0.0434783
+Deviations: 0  -0.0217391  -0.152174  0  -0.108696  -0.0869565  
+Reached the termination state since all deviations are non positive
+
+The Optimisation function is optimised at the point : x4 = 0.152174, x1 = 0.0434783, Rest all xis=0
+The value of the objective function at this point is : 0.195652
+
+
+Done solving the obtained LPP by simplex method
+The optimal strategy proportions of the 2 players are the following: 
+For Player B ->     0.222222            0            0     0.777778 
+For Player A ->     0.555556     0.444444 
+The value of the game is 1.11111
+

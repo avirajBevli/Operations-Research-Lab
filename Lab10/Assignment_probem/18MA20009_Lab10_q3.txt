@@ -1,0 +1,105 @@
+//18MA20009
+
+Enter the number of jobs: 4
+Enter the number of operators: 5
+
+This is not a Balanced Assignment problem, will have to make it balanced by introducing dummy variables!
+
+Enter job-operator cost table (cell in the ith row and jth column represents the cost of assignment of ith job to the jth operator): 
+57 33 22 31 98
+97 59 22 45 7
+56 63 33 84 90
+43 97 11 71 96
+
+
+//////////////////////
+The job-operator cost tableau(INPUT) is: 
+   57    33    22    31    98 
+   97    59    22    45     7 
+   56    63    33    84    90 
+   43    97    11    71    96 
+    0     0     0     0     0 
+
+//////////Phase 1 -> 
+Min row elements are: 22, 7, 33, 11, 0, 
+Done row reductions, the new mat is -> 
+   35    11     0     9    76 
+   90    52    15    38     0 
+   23    30     0    51    57 
+   32    86     0    60    85 
+    0     0     0     0     0 
+
+Min col elements are: 0, 0, 0, 0, 0, 
+Done column reductions, the new mat is -> 
+   35    11     0     9    76 
+   90    52    15    38     0 
+   23    30     0    51    57 
+   32    86     0    60    85 
+    0     0     0     0     0 
+
+
+//////////Phase 2 (Optimzation of the problem) -> 
+Done Row scanning
+Cell (4,0) identified as a zero not covered with lines
+All the zeros are not covered with lines, hence Doing column scanning
+Done Col scanning
+Marked rows: 4, 
+Marked cols: 2, 4, 
+Marked zeros: (0,2), (1,4), (4,0), 
+
+Number of marked cells are 3, Number of rows are 5
+Optimality has not been obtained since num_rows is not equal to num_cells_marked........Continuing iterations
+
+min_undetected_cell : (0,3), its val: 9
+
+After modifying the matrix(add minimum value at the intersection points, subtract minimum value from the undeleted cells), the mat now becomes: 
+   26     2     0     0    76 
+   81    43    15    29     0 
+   14    21     0    42    57 
+   23    77     0    51    85 
+    0     0     9     0     9 
+
+Done Row scanning
+Cell (0,3) identified as a zero not covered with lines
+All the zeros are not covered with lines, hence Doing column scanning
+Done Col scanning
+Marked rows: 0, 4, 
+Marked cols: 2, 4, 
+Marked zeros: (0,3), (1,4), (2,2), (4,0), 
+
+Number of marked cells are 4, Number of rows are 5
+Optimality has not been obtained since num_rows is not equal to num_cells_marked........Continuing iterations
+
+min_undetected_cell : (2,0), its val: 14
+
+After modifying the matrix(add minimum value at the intersection points, subtract minimum value from the undeleted cells), the mat now becomes: 
+   26     2    14     0    90 
+   67    29    15    15     0 
+    0     7     0    28    57 
+    9    63     0    37    85 
+    0     0    23     0    23 
+
+Done Row scanning
+Cell (2,0) identified as a zero not covered with lines
+All the zeros are not covered with lines, hence Doing column scanning
+Done Col scanning
+Cell (2,0) identified as a zero not covered with lines
+Done Row scanning
+Since all the zeros are already covered with lines, no need to do column scanning
+Marked rows: 4, 
+Marked cols: 0, 1, 2, 3, 4, 
+Marked zeros: (0,3), (1,4), (2,0), (3,2), (4,1), 
+
+Number of marked cells are 5, Number of rows are 5
+Optimality has been obtained since num_rows is equal to num_cells_marked. Returning optimal solution!
+
+Only one optimal setting exists for this problem, which is given by
+In the optimal solution, jobs have been allocated to operators as: 
+Job 0 is assigned to operator 3 with cost 31
+Job 1 is assigned to operator 4 with cost 7
+Job 2 is assigned to operator 0 with cost 56
+Job 3 is assigned to operator 2 with cost 11
+Job 4 is assigned to operator 1 with cost 0 {DUMMY}
+
+Hence, optimal total cost is 105
+
