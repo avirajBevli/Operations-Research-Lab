@@ -1,0 +1,98 @@
+Enter the number of origins: 3
+4
+30 50 80
+20 60 55 40
+3 8 7 4
+5 2 9 5
+4 3 6 2Enter the number of destinations: 
+Enter the supplies at the 3 origins:
+
+Enter the demands at the 4 destinations:
+
+Enter the transportation costs from source i to destination j in row wise order
+
+
+The initial problem: 
+The given transportation problem is not balanced. Adding dummy variables to balance it!
+Total supply: 160, Total demand: 175
+    3     8     7     4    30 
+    5     2     9     5    50 
+    4     3     6     2    80 
+    0     0     0     0   160 
+   20    60    55    40     0 
+
+Finding Initital BFS using NorthWest Corner Method
+
+Initial table(-1 represent unallocated cells) -> 
+   20    10    -1    -1 
+   -1    50    -1    -1 
+   -1     0    55    25 
+   -1    -1    -1    15 
+
+
+Iteration: 1
+Current cost: 620
+Ui_vec: 0 -6 -5 -7 
+Vj_vec: 3 8 11 7 
+Penalties: 
+P[0][2]: 4
+P[0][3]: 3
+P[1][0]: -8
+P[1][2]: -4
+P[1][3]: -4
+P[2][0]: -6
+P[3][0]: -4
+P[3][1]: 1
+P[3][2]: 4
+New Basic Cell: (0, 2)
+Found a loop
+The detected loop: (0,2), (1,2), (2,2), (2,1), (1,1), (0,1), 
+Table 1 -> 
+   20    -1    10    -1 
+   -1    50    -1    -1 
+   -1    10    45    25 
+   -1    -1    -1    15 
+
+
+Iteration: 2
+Current cost: 580
+Ui_vec: 0 -2 -1 -3 
+Vj_vec: 3 4 7 3 
+Penalties: 
+P[0][1]: -4
+P[0][3]: -1
+P[1][0]: -4
+P[1][2]: -4
+P[1][3]: -4
+P[2][0]: -2
+P[3][0]: 0
+P[3][1]: 1
+P[3][2]: 4
+New Basic Cell: (3, 2)
+Found a loop
+The detected loop: (3,2), (3,3), (2,3), (2,2), 
+Table 2 -> 
+   20    -1    10    -1 
+   -1    50    -1    -1 
+   -1    10    30    40 
+   -1    -1    15    -1 
+
+
+Iteration: 3
+Current cost: 520
+Ui_vec: 0 -2 -1 -7 
+Vj_vec: 3 4 7 3 
+Penalties: 
+P[0][1]: -4
+P[0][3]: -1
+P[1][0]: -4
+P[1][2]: -4
+P[1][3]: -4
+P[2][0]: -2
+P[3][0]: -4
+P[3][1]: -3
+P[3][3]: -4
+optimality has been reached!
+
+
+Final cost: 520

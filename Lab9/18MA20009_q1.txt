@@ -1,0 +1,88 @@
+Enter the number of origins: 3
+4
+3 5 7
+3 2 6 4
+10 7 3 6
+1 6 8 3
+7 4 5 3Enter the number of destinations: 
+Enter the supplies at the 3 origins:
+
+Enter the demands at the 4 destinations:
+
+Enter the transportation costs from source i to destination j in row wise order
+
+
+The initial problem: 
+   10     7     3     6     3 
+    1     6     8     3     5 
+    7     4     5     3     7 
+    3     2     6     4    15 
+
+Finding Initital BFS using NorthWest Corner Method
+
+Initial table(-1 represent unallocated cells) -> 
+    3    -1    -1    -1 
+    0     2     3    -1 
+   -1    -1     3     4 
+
+
+Iteration: 1
+Current cost: 93
+Ui_vec: 0 -9 -12 
+Vj_vec: 10 15 17 15 
+Penalties: 
+P[0][1]: 8
+P[0][2]: 14
+P[0][3]: 9
+P[1][3]: 3
+P[2][0]: -9
+P[2][1]: -1
+New Basic Cell: (0, 2)
+Found a loop
+The detected loop: (0,2), (1,2), (1,1), (1,0), (0,0), (0,1), 
+Table 1 -> 
+   -1    -1     3    -1 
+    3     2    -1    -1 
+   -1    -1     3     4 
+
+
+Iteration: 2
+Current cost: 51
+Ui_vec: 0 0 2 
+Vj_vec: 1 6 3 1 
+Penalties: 
+P[0][0]: -9
+P[0][1]: -1
+P[0][3]: -5
+P[1][2]: -5
+P[1][3]: -2
+P[2][0]: -4
+P[2][1]: 4
+New Basic Cell: (2, 1)
+
+Couldn't find loop,  Moving on to try The Least Cost Method
+
+
+Least Cost Method: 
+
+Initial table(-1 represent unallocated cells) -> 
+   -1    -1     3    -1 
+    3    -1    -1     2 
+   -1     2     3     2 
+
+
+Iteration: 1
+Current cost: 47
+Ui_vec: 0 2 2 
+Vj_vec: -1 2 3 1 
+Penalties: 
+P[0][0]: -11
+P[0][1]: -5
+P[0][3]: -5
+P[1][1]: -2
+P[1][2]: -3
+P[2][0]: -6
+optimality has been reached!
+
+
+Final cost: 47
